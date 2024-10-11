@@ -5,6 +5,7 @@ export const NUM = 10;
 class Counter extends Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       name: this.props.name,
       count: this.props.initialCount,
@@ -24,6 +25,8 @@ class Counter extends Component {
   };
 
   render() {
+    // this.setState({ name: "TEST" });
+    // console.log("Count", this.state.count);
     return (
       <div>
         <h2
