@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Counter from "./components/Counter";
+// import Counter from "./components/Counter";
 import { Form } from "./components/Form";
 import { ControlledForm } from "./components/ControlledForm";
 import { Temp } from "./components/Temp";
@@ -7,6 +7,10 @@ import { Mount } from "./components/Mount";
 import { Update } from "./components/Update";
 import { Stock } from "./components/Stock";
 import { Hello } from "./components/function/Hello";
+import { Counter } from "./components/function/Counter";
+import { CuriousCat } from "./components/function/Curious";
+import { Auth } from "./components/function/Auth";
+import { EvenOdd } from "./components/function/EvenOdd";
 
 class App extends Component {
   constructor() {
@@ -21,7 +25,7 @@ class App extends Component {
     return (
       <div>
         <h1>Hello, React!</h1>
-        <p>This is a basic React application.</p>
+        {/* <p>This is a basic React application.</p> */}
         {/* <button onClick={() => this.setState({ flag: !this.state.flag })}>
           Toggle Flag
         </button> */}
@@ -41,7 +45,11 @@ class App extends Component {
         {/* <p>{this.state.userId}</p> */}
         {/* <Update userId={this.state.userId} /> */}
         {/* {this.state.flag && <Stock />} */}
-        <Hello name="Crio" />
+        {/* <Hello name="Crio" /> */}
+        {/* <Counter /> */}
+        {/* <CuriousCat /> */}
+        {/* <Auth /> */}
+        <EvenOdd />
       </div>
     );
   }

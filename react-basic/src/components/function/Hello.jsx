@@ -1,8 +1,9 @@
 // export function Hello() {
 //   return <h1>Hello World</h1>;
 // }
-
+// Dumb component/ Stateless component
 export const Hello = (props) => {
+  console.log(props);
   let counter = 0;
 
   return (
