@@ -21,7 +21,9 @@ export const Counter = () => {
   };
 
   const handleDecrement = () => {
-    setCount(count - 1);
+    // 5
+    setCount(count - 1); // 4
+    console.log(count); // 5
   };
 
   const handleAddressUpdate = () => {
