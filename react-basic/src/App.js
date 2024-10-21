@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 // import Counter from "./components/Counter";
 import { Form } from "./components/Form";
 import { ControlledForm } from "./components/ControlledForm";
@@ -11,8 +11,19 @@ import { Counter } from "./components/function/Counter";
 import { CuriousCat } from "./components/function/Curious";
 import { Auth } from "./components/function/Auth";
 import { EvenOdd } from "./components/function/EvenOdd";
+import { SuperHero } from "./components/function/SuperHero";
+import { Effect } from "./components/function/Effect";
+import { UserEmail } from "./components/function/UserEmail";
 
-class App extends Component {
+const superHeroes = [
+  { id: "jdkdjk1", name: "Iron Man" },
+  { id: "b3dkdj2", name: "Black Widow" },
+  { id: "uniqIda", name: "Shaktimaan" },
+  { id: "anOtuniqId", name: "Goku" },
+  { id: "a2jdkjd", name: "Winter Soldier" },
+];
+
+class App2 extends Component {
   constructor() {
     super();
     this.state = {
@@ -49,10 +60,55 @@ class App extends Component {
         {/* <Counter /> */}
         {/* <CuriousCat /> */}
         {/* <Auth /> */}
-        <EvenOdd />
+        {/* <EvenOdd /> */}
+        {/* {[
+          <div>
+            <SuperHero name={superHeroes[0].name} />
+            <SuperHero name={superHeroes[1].name} />
+            <SuperHero name={superHeroes[2].name} />
+          </div>,
+        ]} */}
+        {/* {superHeroes.forEach((hero) => (
+          <SuperHero name={hero.name} />
+        ))} */}
+        {superHeroes.map((hero, index) => (
+          <SuperHero key={index} name={hero.name} />
+        ))}
       </div>
     );
   }
+}
+
+function App() {
+  const [superHeroData, setSuperHeroData] = useState(superHeroes);
+  const [flag, setFlag] = useState(true);
+  const [userId, setUserId] = useState(1);
+
+  const shuffleHeroData = () => {
+    const shuffledData = [...superHeroData].sort(() => Math.random() - 0.5);
+    setSuperHeroData(shuffledData);
+  };
+
+  return (
+    <div>
+      <h1>Hello, React!</h1>
+      {/* <button onClick={shuffleHeroData}>Shuffle SuperHero</button> */}
+      {/* {superHeroData.map((hero) => (
+        <SuperHero key={hero.id} name={hero.name} />
+      ))} */}
+      {/* <button onClick={() => setFlag(!flag)}>Toggle Component</button> */}
+      {/* {flag && <Effect />} */}
+      <input
+        type="number"
+        name="userId"
+        value={userId}
+        onChange={(e) => {
+          setUserId(e.target.value);
+        }}
+      />
+      <UserEmail userId={userId} />
+    </div>
+  );
 }
 
 export default App;
